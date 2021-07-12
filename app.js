@@ -84,7 +84,7 @@ function searchByName(people) {
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people) {
-
+ // use filter
 }
 
 //TODO: add other trait filter functions here.
@@ -98,6 +98,8 @@ function searchByEyeColor(people) {
 /////////////////////////////////////////////////////////////////
 //#region 
 
+// Takes in a parameter of People (array) ... probably my searchResults
+// display the first & and last name for each person in that array
 // alerts a list of people
 function displayPeople(people) {
   alert(people.map(function (person) {
@@ -105,6 +107,7 @@ function displayPeople(people) {
   }).join("\n"));
 }
 
+// Takes in a parmeter of one person (object)
 function displayPerson(person) {
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
@@ -158,6 +161,11 @@ function yesNo(input) {
   else {
     return false;
   }
+}
+
+// helper function/callback to checkf for valid eyecolor
+function validEyeColorOptions(input){
+  // write validation routine
 }
 
 // helper function to pass in as default promptFor validation.
