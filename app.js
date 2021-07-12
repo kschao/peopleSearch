@@ -8,7 +8,6 @@
 
 // app is the function called to start the entire application
 function app(people) {
-  debugger;
   let searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
   let searchResults;
   switch (searchType) {
@@ -123,6 +122,19 @@ function displayPerson(person) {
 //Functions to validate user input.
 /////////////////////////////////////////////////////////////////
 //#region 
+function searchByTraits (){
+}
+let displayOption = [
+  {choice1: 'info'},
+  {choice2: 'family'},
+  {choice3: 'descendants'},
+];
+let ansWers = {choice1: 'info', choice2:'family', choice3:'descendants'};
+let booleanValue = displayOption.filter((item) =>
+  item.choice1 === ansWers.object.choice1 &&
+  item.choice2 === object.choice2 &&
+  item.choice3 === object.choice3).length > 0
+  console.log({booleanValue})
 
 //a function that takes in a question to prompt, and a callback function to validate the user input.
 //response: Will capture the user input.
@@ -160,4 +172,4 @@ function customValidation(input) {
 
 }
 
-//#endregion
+// #endregion//
