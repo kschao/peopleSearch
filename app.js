@@ -78,12 +78,22 @@ function searchByName(people) {
       return false;
     }
   })
+  
   // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people) {
+  let eyecolor = promptFor ("Enter eye color 'brown', 'black', 'green', 'blue', 'or' 'hazel'", autoValid);
+  let foundEyeColor = people.fliter(function (potentialMatch){
+    if (potentialMatch.eyeColor === eyeColor) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  })
  // use filter
 }
 
@@ -125,19 +135,6 @@ function displayPerson(person) {
 //Functions to validate user input.
 /////////////////////////////////////////////////////////////////
 //#region 
-function searchByTraits (){
-}
-let displayOption = [
-  {choice1: 'info'},
-  {choice2: 'family'},
-  {choice3: 'descendants'},
-];
-let ansWers = {choice1: 'info', choice2:'family', choice3:'descendants'};
-let booleanValue = displayOption.filter((item) =>
-  item.choice1 === ansWers.object.choice1 &&
-  item.choice2 === object.choice2 &&
-  item.choice3 === object.choice3).length > 0
-  console.log({booleanValue})
 
 //a function that takes in a question to prompt, and a callback function to validate the user input.
 //response: Will capture the user input.
@@ -163,8 +160,14 @@ function yesNo(input) {
   }
 }
 
-// helper function/callback to checkf for valid eyecolor
+// helper function/callback to check for valid eyecolor
 function validEyeColorOptions(input){
+  if (input.toLowerCase() == 'info' || input.toLowerCase == 'family' || input.toLowerCase == 'descendants'){
+    return true;
+  }
+  else {
+    return false;
+  }
   // write validation routine
 }
 
