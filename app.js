@@ -14,9 +14,8 @@ function app(people) {
     case 'yes':
       searchResults = searchByName(people);
       break;
-    case 'no':
+    case 'no':     
       // TODO: search by traits
-      break;
     default:
       app(people); // restart app
       break;
@@ -24,6 +23,13 @@ function app(people) {
 
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
   mainMenu(searchResults, people);
+}
+
+function mainMenu2(people, person) {
+  if (!people) {
+    alert("No Match");
+    return app(person);
+  }
 }
 
 // Menu function to call once you find who you are looking for
@@ -82,12 +88,13 @@ function searchByName(people) {
   // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
+console.log(searchByName)(people);
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
  // use filter
  function searchByEyeColor(people) {
   let eyecolor = promptFor ("Enter eye color 'brown', 'black', 'green', 'blue', 'or' 'hazel'", autoValid);
-  let foundEyeColor = people.fliter(function (potentialMatch){
+  let foundEyeColor = person.fliter(function (potentialMatch){
     if (potentialMatch.eyeColor === eyeColor) {
       return true;
     }
@@ -99,18 +106,20 @@ function searchByName(people) {
 }
 
 //TODO: add other trait filter functions here.
-function searchByTraits (person){
-  let eyeS = ['blue', 'black','brown','green','hazel', autoValid];
-  let eyeSelect = person.filter(function(potentialMatch){
-    if (potentialMatch.eyeSelect === eyeS){
+let listOfTraits = ["eye color", "height","weight","gender","occupation"];
+function findTheTraits (arrayOfTraits, valid){
+  let searchTraits = arrayOfTraits.filter(function(el){
+    if(el.charAt(0) === valid){
       return true;
     }
     else{
       return false;
     }
   })
-}
+  return findTheTraits;
+  console.log(listOfTraits)(person);
 
+}
 
 //#endregion
 
@@ -145,19 +154,19 @@ function displayPerson(person) {
 //Validation functions.
 //Functions to validate user input.
 /////////////////////////////////////////////////////////////////
-function validateUserInput(displayOption){
-}
-let fChoice = document.forms[e].elements["fChoice[]"];
-if (typeof fChoice.length != "info")
-   fchoice = [fchoice];
-let fchoice2 = document.forms[e].elements["fchoice2[]"];
-if (typeof fchoice2.length != "family")
-   fchoice2 = [fchoice2];
-let fchoice3 = document.forms[e].elements["fchoice3[]"];
-if (typeof fchoice3.length != "family")
-      fchoice3 = [fchoice3];
-let items = ["info", "family", "descendants"];
-alert(validInput(valid));
+function displayOption(people) {
+  let person = promptFor(question, valid);
+
+  let foundPerson = people.filter(function (potentialMatch) {
+    if (potentialMatch.firstName === firstName && potentialMatch.lastName === lastName) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  })
+  return foundPerson;
+  }
 //#region 
 
 //a function that takes in a question to prompt, and a callback function to validate the user input.
