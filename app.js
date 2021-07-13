@@ -84,7 +84,8 @@ function searchByName(people) {
 }
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
-function searchByEyeColor(people) {
+ // use filter
+ function searchByEyeColor(people) {
   let eyecolor = promptFor ("Enter eye color 'brown', 'black', 'green', 'blue', 'or' 'hazel'", autoValid);
   let foundEyeColor = people.fliter(function (potentialMatch){
     if (potentialMatch.eyeColor === eyeColor) {
@@ -94,11 +95,21 @@ function searchByEyeColor(people) {
       return false;
     }
   })
- // use filter
+
 }
 
 //TODO: add other trait filter functions here.
-
+function searchByTraits (person){
+  let eyeS = ['blue', 'black','brown','green','hazel', autoValid];
+  let eyeSelect = person.filter(function(potentialMatch){
+    if (potentialMatch.eyeSelect === eyeS){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+}
 
 
 //#endregion
@@ -134,6 +145,19 @@ function displayPerson(person) {
 //Validation functions.
 //Functions to validate user input.
 /////////////////////////////////////////////////////////////////
+function validateUserInput(displayOption){
+}
+let fChoice = document.forms[e].elements["fChoice[]"];
+if (typeof fChoice.length != "info")
+   fchoice = [fchoice];
+let fchoice2 = document.forms[e].elements["fchoice2[]"];
+if (typeof fchoice2.length != "family")
+   fchoice2 = [fchoice2];
+let fchoice3 = document.forms[e].elements["fchoice3[]"];
+if (typeof fchoice3.length != "family")
+      fchoice3 = [fchoice3];
+let items = ["info", "family", "descendants"];
+alert(validInput(valid));
 //#region 
 
 //a function that takes in a question to prompt, and a callback function to validate the user input.
@@ -161,15 +185,8 @@ function yesNo(input) {
 }
 
 // helper function/callback to check for valid eyecolor
-function validEyeColorOptions(input){
-  if (input.toLowerCase() == 'info' || input.toLowerCase == 'family' || input.toLowerCase == 'descendants'){
-    return true;
-  }
-  else {
-    return false;
-  }
   // write validation routine
-}
+
 
 // helper function to pass in as default promptFor validation.
 //this will always return true for all inputs.
